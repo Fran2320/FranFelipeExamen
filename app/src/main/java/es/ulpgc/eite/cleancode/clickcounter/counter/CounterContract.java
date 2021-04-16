@@ -36,6 +36,7 @@ public interface CounterContract {
     void onDataFromPreviousScreen(String data);
     int getCuenta();
     void setCuenta(int cuenta);
+    void setStoredData(String dato);
   }
 
 }

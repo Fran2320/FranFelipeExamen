@@ -27,6 +27,9 @@ public class CounterModel implements CounterContract.Model {
     // Log.e(TAG, "getStoredData()");
     return data;
   }
+  public void setStoredData(String dato){
+    data=dato;
+  }
 
   @Override
   public void onRestartScreen(String data) {

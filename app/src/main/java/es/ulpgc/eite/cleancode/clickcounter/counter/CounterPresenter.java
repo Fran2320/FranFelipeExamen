@@ -98,11 +98,12 @@ public class CounterPresenter implements CounterContract.Presenter {
   }
 
   @Override
-  public void onClicksPressed() {
-    // Log.e(TAG, "onClicksPressed()");
-
-
-
+  public void onClicksPressed() { Log.e(TAG, "onClicksPressed()");
+  Log.e(TAG, model.getStoredData());
+  CounterToClicksState nextState = new CounterToClicksState();
+  nextState.data=model.getStoredData();
+  passStateToNextScreen(nextState);
+  view.get().navigateToNextScreen();
   }
 
   @Override
@@ -126,6 +127,7 @@ public class CounterPresenter implements CounterContract.Presenter {
     String count = Integer.toString(cuenta);
     Log.e(TAG, count);
     state.data=count;
+    model.setStoredData(count);
     view.get().onDataUpdated(state);
 
 
