@@ -1,5 +1,7 @@
 package es.ulpgc.eite.cleancode.clickcounter.clicks;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.eite.cleancode.clickcounter.app.AppMediator;
@@ -41,7 +43,13 @@ public class ClicksPresenter implements ClicksContract.Presenter {
       model.onDataFromPreviousScreen(savedState.data);
 
       // update the state if is necessary
-      state.data = savedState.data;
+      //state.data = savedState.data;
+      String cuenta = savedState.data;
+      int cuent = Integer.parseInt(cuenta);
+      int count =state.cuenta + cuent;
+      state.cuenta=count;
+      state.data = Integer.toString(count);
+
     }
   }
 
@@ -96,7 +104,13 @@ public class ClicksPresenter implements ClicksContract.Presenter {
 
   @Override
   public void onClearPressed() {
-    // Log.e(TAG, "onClearPressed()");
+     Log.e(TAG, "onClearPressed()");
+    int reset = 0;
+    state.cuenta=reset;
+    state.data = Integer.toString(state.cuenta);
+    Log.e(TAG, state.data);
+    view.get().onDataUpdated(state);
+
   }
 
   private void passStateToPreviousScreen(ClicksToCounterState state) {
