@@ -34,7 +34,9 @@ public class CounterPresenter implements CounterContract.Presenter {
     }
 
     // call the model and update the state
-    state.data = model.getStoredData();
+    state.cuenta = model.getCuenta();
+    String count = Integer.toString(state.cuenta);
+    state.data = count;
 
     /*
     // use passed state if is necessary
@@ -104,7 +106,9 @@ public class CounterPresenter implements CounterContract.Presenter {
   public void onClicksPressed() { Log.e(TAG, "onClicksPressed()");
   Log.e(TAG, model.getStoredData());
   CounterToClicksState nextState = new CounterToClicksState();
-  nextState.data=model.getStoredData();
+  nextState.nVecesPulsadas=model.getNumVeces();
+  //nextState.data=model.getStoredData();
+
   passStateToNextScreen(nextState);
   view.get().navigateToNextScreen();
   }
@@ -142,6 +146,9 @@ public class CounterPresenter implements CounterContract.Presenter {
     state.data=count;
     model.setStoredData(count);
     state.clickEnabled=true;
+    int increment = model.getNumVeces()+1;
+    state.numVeces=increment;
+    model.setNumVeces(state.numVeces);
     view.get().onDataUpdated(state);
 
 

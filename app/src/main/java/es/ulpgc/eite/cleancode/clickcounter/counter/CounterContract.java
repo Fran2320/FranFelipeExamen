@@ -37,6 +37,8 @@ public interface CounterContract {
     int getCuenta();
     void setCuenta(int cuenta);
     void setStoredData(String dato);
+    int getNumVeces();
+    void setNumVeces(int num);
   }
 
 }

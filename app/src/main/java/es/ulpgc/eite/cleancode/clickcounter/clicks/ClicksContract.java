@@ -28,5 +28,6 @@ public interface ClicksContract {
     void onDataFromNextScreen(String data);
     void onRestartScreen(String data);
     void onDataFromPreviousScreen(String data);
+    void setCuenta(int num);
   }
 }

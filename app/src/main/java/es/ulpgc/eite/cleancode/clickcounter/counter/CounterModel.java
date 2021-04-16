@@ -1,13 +1,12 @@
 package es.ulpgc.eite.cleancode.clickcounter.counter;
 
-import android.util.Log;
-
 public class CounterModel implements CounterContract.Model {
 
   public static String TAG = CounterModel.class.getSimpleName();
 
   private String data;
   private int cuenta=0;
+  private int numVeces=0;
 
   public CounterModel(String data) {
     this.data = data;
@@ -20,6 +19,17 @@ public class CounterModel implements CounterContract.Model {
   }
   public void setCuenta(int num){
     cuenta=num;
+  }
+
+  @Override
+  public int getNumVeces() {
+    // Log.e(TAG, "getStoredData()");
+    return numVeces;
+  }
+  @Override
+  public void setNumVeces(int num) {
+    // Log.e(TAG, "getStoredData()");
+    numVeces = num;
   }
 
   @Override

@@ -7,6 +7,7 @@ public class ClicksModel implements ClicksContract.Model {
   public static String TAG = ClicksModel.class.getSimpleName();
 
   private String data;
+  private int cuenta;
 
   public ClicksModel(String data) {
     this.data = data;
@@ -16,6 +17,12 @@ public class ClicksModel implements ClicksContract.Model {
   public String getStoredData() {
     // Log.e(TAG, "getStoredData()");
     return data;
+  }
+
+  @Override
+  public void setCuenta(int num) {
+    // Log.e(TAG, "getStoredData()");
+    cuenta=num;
   }
 
   @Override

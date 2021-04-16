@@ -44,12 +44,16 @@ public class ClicksPresenter implements ClicksContract.Presenter {
 
       // update the state if is necessary
       //state.data = savedState.data;
-      String cuenta = savedState.data;
-      int cuent = Integer.parseInt(cuenta);
-      int count =state.cuenta + cuent;
-      state.cuenta=count;
-      state.data = Integer.toString(count);
+      //String cuenta = savedState.data;
+      //int cuent = Integer.parseInt(cuenta);
+      //int count =state.cuenta + cuent;
+      //state.cuenta=count;
+      //state.data = Integer.toString(count);
 
+      //Intentando la cuenta
+      state.cuenta = savedState.nVecesPulsadas;
+      model.setCuenta(state.cuenta);
+      state.data = Integer.toString(state.cuenta);
     }
   }
 
@@ -107,6 +111,7 @@ public class ClicksPresenter implements ClicksContract.Presenter {
      Log.e(TAG, "onClearPressed()");
     int reset = 0;
     state.cuenta=reset;
+    model.setCuenta(state.cuenta);
     state.data = Integer.toString(state.cuenta);
     Log.e(TAG, state.data);
     view.get().onDataUpdated(state);
