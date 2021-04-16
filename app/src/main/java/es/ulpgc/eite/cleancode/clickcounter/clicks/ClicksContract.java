@@ -29,5 +29,6 @@ public interface ClicksContract {
     void onRestartScreen(String data);
     void onDataFromPreviousScreen(String data);
     void setCuenta(int num);
+    void setData(String datos);
   }
 }

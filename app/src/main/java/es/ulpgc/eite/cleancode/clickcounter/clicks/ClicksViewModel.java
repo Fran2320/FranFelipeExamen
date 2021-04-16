@@ -5,4 +5,7 @@ public class ClicksViewModel {
   // put the view state here
   public String data;
   public int cuenta;
+  public int numAnterior;
+
+  public boolean clearPulsado;
 }
