@@ -122,9 +122,14 @@ public class CounterPresenter implements CounterContract.Presenter {
   public void onIncrementPressed() {
      Log.e(TAG, "onIncrementPressed()");
     int cuenta = model.getCuenta();
-    state.cuenta= cuenta++;
-    model.setCuenta(cuenta);
-    String count = Integer.toString(cuenta);
+    //state.cuenta= cuenta++;
+    int num = cuenta+1;
+    if(num==10){
+      num=0;
+    }
+    state.cuenta=num;
+    model.setCuenta(num);
+    String count = Integer.toString(num);
     Log.e(TAG, count);
     state.data=count;
     model.setStoredData(count);
