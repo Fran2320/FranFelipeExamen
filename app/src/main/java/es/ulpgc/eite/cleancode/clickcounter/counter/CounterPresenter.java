@@ -132,6 +132,8 @@ public class CounterPresenter implements CounterContract.Presenter {
     if(num==10){
       num=0;
       state.resetEnabled=false;
+    }else{
+      state.resetEnabled=true;
     }
     state.cuenta=num;
     model.setCuenta(num);
@@ -140,7 +142,6 @@ public class CounterPresenter implements CounterContract.Presenter {
     state.data=count;
     model.setStoredData(count);
     state.clickEnabled=true;
-    state.resetEnabled=true;
     view.get().onDataUpdated(state);
 
 
