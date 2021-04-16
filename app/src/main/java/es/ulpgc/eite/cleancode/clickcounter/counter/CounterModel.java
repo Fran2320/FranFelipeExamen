@@ -7,9 +7,19 @@ public class CounterModel implements CounterContract.Model {
   public static String TAG = CounterModel.class.getSimpleName();
 
   private String data;
+  private int cuenta=0;
 
   public CounterModel(String data) {
     this.data = data;
+  }
+
+  @Override
+  public int getCuenta() {
+    // Log.e(TAG, "getStoredData()");
+    return cuenta;
+  }
+  public void setCuenta(int num){
+    cuenta=num;
   }
 
   @Override

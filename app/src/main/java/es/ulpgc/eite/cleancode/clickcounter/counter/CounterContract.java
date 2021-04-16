@@ -34,6 +34,8 @@ public interface CounterContract {
     void onDataFromNextScreen(String data);
     void onRestartScreen(String data);
     void onDataFromPreviousScreen(String data);
+    int getCuenta();
+    void setCuenta(int cuenta);
   }
 
 }

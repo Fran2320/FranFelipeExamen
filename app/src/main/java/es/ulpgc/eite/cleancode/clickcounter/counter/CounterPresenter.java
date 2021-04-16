@@ -1,5 +1,7 @@
 package es.ulpgc.eite.cleancode.clickcounter.counter;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.eite.cleancode.clickcounter.app.AppMediator;
@@ -98,6 +100,8 @@ public class CounterPresenter implements CounterContract.Presenter {
   @Override
   public void onClicksPressed() {
     // Log.e(TAG, "onClicksPressed()");
+
+
   }
 
   @Override
@@ -107,7 +111,16 @@ public class CounterPresenter implements CounterContract.Presenter {
 
   @Override
   public void onIncrementPressed() {
-    // Log.e(TAG, "onIncrementPressed()");
+     Log.e(TAG, "onIncrementPressed()");
+    int cuenta = model.getCuenta();
+    state.cuenta= cuenta++;
+    model.setCuenta(cuenta);
+    String count = Integer.toString(cuenta);
+    Log.e(TAG, count);
+    state.data=count;
+    view.get().onDataUpdated(state);
+
+
   }
 
   private void passStateToNextScreen(CounterToClicksState state) {
