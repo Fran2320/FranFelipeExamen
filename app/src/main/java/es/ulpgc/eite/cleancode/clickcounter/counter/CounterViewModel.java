@@ -6,4 +6,7 @@ public class CounterViewModel {
   public String data;
   public int cuenta;
 
+  public boolean resetEnabled = false;
+  public boolean clickEnabled = false;
+
 }

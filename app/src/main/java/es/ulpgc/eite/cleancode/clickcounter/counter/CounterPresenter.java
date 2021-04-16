@@ -137,6 +137,8 @@ public class CounterPresenter implements CounterContract.Presenter {
     Log.e(TAG, count);
     state.data=count;
     model.setStoredData(count);
+    state.clickEnabled=true;
+    state.resetEnabled=true;
     view.get().onDataUpdated(state);
 
 
