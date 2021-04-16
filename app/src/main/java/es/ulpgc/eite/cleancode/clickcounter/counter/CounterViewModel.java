@@ -5,4 +5,5 @@ public class CounterViewModel {
   // put the view state here
   public String data;
   public int cuenta;
+
 }

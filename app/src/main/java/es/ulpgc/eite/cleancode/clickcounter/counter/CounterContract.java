@@ -32,7 +32,7 @@ public interface CounterContract {
   interface Model {
     String getStoredData();
     void onDataFromNextScreen(String data);
-    void onRestartScreen(String data);
+    void onRestartScreen(String dato);
     void onDataFromPreviousScreen(String data);
     int getCuenta();
     void setCuenta(int cuenta);

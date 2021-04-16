@@ -52,15 +52,18 @@ public class CounterPresenter implements CounterContract.Presenter {
 
   @Override
   public void onRestart() {
-    // Log.e(TAG, "onRestart()");
+     Log.e(TAG, "onRestart()");
 
     // update the model if is necessary
     model.onRestartScreen(state.data);
+    model.setStoredData(state.data);
+    model.setCuenta(state.cuenta);
+    Log.e(TAG, state.data);
   }
 
   @Override
   public void onResume() {
-    // Log.e(TAG, "onResume()");
+     Log.e(TAG, "onResume()");
 
     // use passed state if is necessary
     ClicksToCounterState savedState = getStateFromNextScreen();
@@ -94,7 +97,7 @@ public class CounterPresenter implements CounterContract.Presenter {
 
   @Override
   public void onDestroy() {
-    // Log.e(TAG, "onDestroy()");
+     Log.e(TAG, "onDestroy()");
   }
 
   @Override
@@ -115,6 +118,7 @@ public class CounterPresenter implements CounterContract.Presenter {
     String count = Integer.toString(cuenta);
     state.data=count;
     view.get().onDataUpdated(state);
+
 
   }
 

@@ -32,7 +32,7 @@ public class CounterModel implements CounterContract.Model {
   }
 
   @Override
-  public void onRestartScreen(String data) {
+  public void onRestartScreen(String dato) {
     // Log.e(TAG, "onRestartScreen()");
   }
 
