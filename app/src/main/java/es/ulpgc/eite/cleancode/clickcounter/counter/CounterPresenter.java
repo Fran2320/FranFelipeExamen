@@ -117,6 +117,7 @@ public class CounterPresenter implements CounterContract.Presenter {
     state.cuenta=cuenta;
     String count = Integer.toString(cuenta);
     state.data=count;
+    state.resetEnabled=false;
     view.get().onDataUpdated(state);
 
 
@@ -130,6 +131,7 @@ public class CounterPresenter implements CounterContract.Presenter {
     int num = cuenta+1;
     if(num==10){
       num=0;
+      state.resetEnabled=false;
     }
     state.cuenta=num;
     model.setCuenta(num);
