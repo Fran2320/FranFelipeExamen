@@ -51,8 +51,9 @@ public class ClicksPresenter implements ClicksContract.Presenter {
       //state.data = Integer.toString(count);
 
       //Intentando la cuenta
-      state.cuenta = savedState.nVecesPulsadas;
       state.numAnterior=state.cuenta;
+      state.cuenta = savedState.nVecesPulsadas;
+
       model.setCuenta(state.cuenta);
       state.data = Integer.toString(state.cuenta);
 
@@ -70,7 +71,7 @@ public class ClicksPresenter implements ClicksContract.Presenter {
 
   @Override
   public void onResume() {
-    // Log.e(TAG, "onResume()");
+    Log.e(TAG, "onResume()");
 
     /*
     // use passed state if is necessary
