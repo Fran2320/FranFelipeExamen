@@ -102,11 +102,19 @@ public class CounterPresenter implements CounterContract.Presenter {
     // Log.e(TAG, "onClicksPressed()");
 
 
+
   }
 
   @Override
   public void onResetPressed() {
     // Log.e(TAG, "onResetPressed()");
+    int cuenta = 0;
+    model.setCuenta(cuenta);
+    state.cuenta=cuenta;
+    String count = Integer.toString(cuenta);
+    state.data=count;
+    view.get().onDataUpdated(state);
+
   }
 
   @Override
